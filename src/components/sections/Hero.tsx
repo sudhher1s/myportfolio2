@@ -1,12 +1,13 @@
 import AnimateIn from "@/components/AnimateIn";
-import { Github, Linkedin, ExternalLink, ArrowDown, FileText } from "lucide-react";
+import { Github, Linkedin, Code2, TerminalSquare, Trophy, BookOpen, ArrowDown, FileText } from "lucide-react";
 
 const socials = [
   { href: "https://www.linkedin.com/in/sugandhamsudheer/", icon: Linkedin, label: "LinkedIn" },
   { href: "https://github.com/sudhher1s", icon: Github, label: "GitHub" },
-  { href: "https://leetcode.com/u/CS_24345A0501", icon: ExternalLink, label: "LeetCode" },
-  { href: "https://www.codechef.com/users/cs_24345a0501", icon: ExternalLink, label: "CodeChef" },
-  { href: "https://www.geeksforgeeks.org/profile/sudheersu1j5d?tab=activity", icon: ExternalLink, label: "GFG" },
+  { href: "https://leetcode.com/u/CS_24345A0501", icon: Code2, label: "LeetCode" },
+  { href: "https://www.hackerrank.com/profile/sudheersugandham", icon: TerminalSquare, label: "HackerRank" },
+  { href: "https://www.codechef.com/users/cs_24345a0501", icon: Trophy, label: "CodeChef" },
+  { href: "https://www.geeksforgeeks.org/profile/sudheersugandham", icon: BookOpen, label: "GeeksForGeeks" },
 ];
 
 export default function Hero() {

@@ -1,5 +1,5 @@
 import AnimateIn from "@/components/AnimateIn";
-import { Mail, Phone, Linkedin, Github, Send, Loader2, CheckCircle, AlertCircle } from "lucide-react";
+import { Mail, Phone, Linkedin, Github, Code2, TerminalSquare, Trophy, BookOpen, Send, Loader2, CheckCircle, AlertCircle } from "lucide-react";
 import { useState, FormEvent } from "react";
 
 export default function Contact() {
@@ -83,6 +83,18 @@ export default function Contact() {
                   </a>
                   <a href="https://github.com/sudhher1s" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-foreground hover:text-primary transition-colors">
                     <Github size={16} className="text-primary" /> GitHub
+                  </a>
+                  <a href="https://leetcode.com/u/CS_24345A0501" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-foreground hover:text-primary transition-colors">
+                    <Code2 size={16} className="text-primary" /> LeetCode
+                  </a>
+                  <a href="https://www.hackerrank.com/profile/sudheersugandham" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-foreground hover:text-primary transition-colors">
+                    <TerminalSquare size={16} className="text-primary" /> HackerRank
+                  </a>
+                  <a href="https://www.codechef.com/users/cs_24345a0501" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-foreground hover:text-primary transition-colors">
+                    <Trophy size={16} className="text-primary" /> CodeChef
+                  </a>
+                  <a href="https://www.geeksforgeeks.org/profile/sudheersugandham" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-foreground hover:text-primary transition-colors">
+                    <BookOpen size={16} className="text-primary" /> GeeksForGeeks
                   </a>
                 </div>
               </div>
