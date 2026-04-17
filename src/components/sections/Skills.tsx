@@ -1,6 +1,6 @@
 import AnimateIn from "@/components/AnimateIn";
 import { useState } from "react";
-import { Code, Globe, Database, Brain, BarChart3, Wrench, Users, Atom } from "lucide-react";
+import { Code, Globe, Database, Brain, BarChart3, Wrench, Users, Atom, BookOpen } from "lucide-react";
 
 interface SkillGroup {
   name: string;
@@ -50,8 +50,22 @@ const technicalGroups: SkillGroup[] = [
     icon: Atom,
     skills: [
       { name: "Qiskit", level: 50 }, { name: "Quantum Circuits", level: 45 },
-      { name: "Quantum Teleportation", level: 45 }, { name: "Quantum Entanglement", level: 40 },
+      { name: "Quantum Entanglement", level: 40 },
       { name: "Quantum ML", level: 40 },
+    ],
+  },
+  {
+    name: "CSE Core Subjects",
+    icon: BookOpen,
+    skills: [
+      { name: "DBMS", level: 70 },
+      { name: "Operating Systems", level: 68 },
+      { name: "COA", level: 62 },
+      { name: "TOC", level: 60 },
+      { name: "Statistics using Python", level: 65 },
+      { name: "Data Structures and Algorithms", level: 72 },
+      { name: "Computer Networks", level: 66 },
+      { name: "Software Engineering", level: 64 },
     ],
   },
   {
