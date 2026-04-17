@@ -1,3 +1,4 @@
+// v2.1.0 - CSE Core Subjects Added, Quantum Teleportation Removed
 import AnimateIn from "@/components/AnimateIn";
 import { useState } from "react";
 import { Code, Globe, Database, Brain, BarChart3, Wrench, Users, Atom, BookOpen } from "lucide-react";
