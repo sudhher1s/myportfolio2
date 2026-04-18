@@ -21,7 +21,7 @@ const projects: Project[] = [
     stack: ["TypeScript", "React", "Node.js", "AI"],
     github: "https://github.com/sudhher1s/PERSONALIZED-PLACEMENT-ASSISTANCE-SYSTEM",
     highlight: true,
-    categories: ["Web", "ML/AI", "Full Stack"],
+    categories: ["Web", "ML/AI", "Full Stack", "Apps", "Games"],
   },
   {
     title: "Qsentix",
@@ -68,6 +68,14 @@ const projects: Project[] = [
     github: "https://github.com/sudhher1s/RouteAI",
     featured: true,
     categories: ["ML/AI", "Data", "Web"],
+  },
+  {
+    title: "RouteSense AI",
+    subtitle: "Accident-Aware Clean Route Finder",
+    desc: "Smart route recommendation project that suggests shortest paths with accident-risk awareness and cleaner weather conditions based on chosen source and destination.",
+    stack: ["Python", "Flask", "Routing", "Weather API", "Safety"],
+    github: "https://github.com/sudhher1s/RouteSense-AI",
+    categories: ["ML/AI", "Data", "Web", "Apps"],
   },
   {
     title: "MediLogic",
@@ -140,7 +148,7 @@ const projects: Project[] = [
     desc: "Gamified learning platform for kids with Spring Boot backend, React + Vite frontend, and MySQL database. Includes environmental/academic quizzes, points, levels, and leaderboards.",
     stack: ["Spring Boot", "React", "Vite", "MySQL"],
     github: "https://github.com/sudhher1s/GreenEcoPlay",
-    categories: ["Web", "Full Stack", "Games"],
+    categories: ["Web", "Full Stack", "Games", "Apps"],
   },
   {
     title: "EcoBeacon",
@@ -269,16 +277,41 @@ const projects: Project[] = [
     github: "https://github.com/sudhher1s/FLAMES-GAME",
     categories: ["Web", "Games"],
   },
+  {
+    title: "Personalized Todo",
+    subtitle: "Reminder-based Task Manager",
+    desc: "A personalized to-do list app that helps users organize tasks, set reminders, and stay on top of daily work with a simple productivity-focused interface.",
+    stack: ["JavaScript", "HTML/CSS", "Reminders", "Productivity"],
+    github: "https://github.com/sudhher1s/TODO-LIST-APP",
+    categories: ["Web", "Apps"],
+  },
 ];
 
-const allCategories = ["All", "Web", "ML/AI", "Full Stack", "Quantum", "Data", "Backend", "Games", "Mobile"];
+const allCategories = ["All", "Web", "ML/AI", "Full Stack", "Quantum", "Data", "Backend", "Apps", "Games", "Mobile"];
 
-function ProjectCard({ project }: { project: Project }) {
+const featuredMainTitles = [
+  "PlacePrep",
+  "Qsentix",
+  "EyeOnRoad",
+  "CODE-MART",
+  "UrbanEye",
+  "RouteAI",
+];
+
+function partitionProjects(all: Project[]) {
+  const main = featuredMainTitles
+    .map((title) => all.find((p) => p.title === title))
+    .filter((p): p is Project => Boolean(p));
+  const rest = all.filter((p) => !featuredMainTitles.includes(p.title));
+  return { main, rest };
+}
+
+function ProjectCard({ project, large = false }: { project: Project; large?: boolean }) {
   const isHighlighted = project.highlight;
   const isFeatured = project.featured;
 
   return (
-    <div className={`glass-card p-5 md:p-6 flex flex-col h-full hover:scale-[1.01] transition-transform relative overflow-hidden ${
+    <div className={`glass-card ${large ? "p-6 md:p-8" : "p-5 md:p-6"} flex flex-col h-full hover:scale-[1.01] transition-transform relative overflow-hidden ${
       isHighlighted ? "ring-2 ring-primary shadow-[0_0_15px_rgba(0,229,255,0.3)]" : 
       isFeatured ? "ring-1 ring-primary/20" : ""
     }`}>
@@ -287,7 +320,7 @@ function ProjectCard({ project }: { project: Project }) {
       )}
       <div className="flex-1 relative z-10">
         <div className="flex items-start justify-between gap-2">
-          <h3 className="font-display font-semibold text-foreground">{project.title}</h3>
+          <h3 className={`font-display font-semibold text-foreground ${large ? "text-xl md:text-2xl" : ""}`}>{project.title}</h3>
           {(isHighlighted || isFeatured) && (
             <span className={`text-[9px] font-semibold px-2 py-0.5 rounded-full shrink-0 ${
               isHighlighted ? "bg-primary text-background" : "bg-primary/10 text-primary border border-primary/20"
@@ -296,8 +329,8 @@ function ProjectCard({ project }: { project: Project }) {
             </span>
           )}
         </div>
-        {project.subtitle && <p className="text-primary text-xs font-medium mt-0.5">{project.subtitle}</p>}
-        <p className="text-muted-foreground mt-2 leading-relaxed text-xs line-clamp-3">{project.desc}</p>
+        {project.subtitle && <p className={`text-primary font-medium mt-0.5 ${large ? "text-sm" : "text-xs"}`}>{project.subtitle}</p>}
+        <p className={`text-muted-foreground mt-2 leading-relaxed ${large ? "text-sm line-clamp-5" : "text-xs line-clamp-3"}`}>{project.desc}</p>
       </div>
       <div className="mt-4">
         <div className="flex flex-wrap gap-1.5 mb-3">
@@ -319,10 +352,17 @@ function ProjectCard({ project }: { project: Project }) {
 export default function Projects() {
   const [filter, setFilter] = useState("All");
 
+  const { main: featuredMainProjects, rest: restProjects } = useMemo(() => partitionProjects(projects), []);
+
   const filtered = useMemo(() => {
     if (filter === "All") return projects;
     return projects.filter((p) => p.categories.includes(filter));
   }, [filter]);
+
+  const smallProjects = useMemo(() => {
+    if (filter === "All") return restProjects;
+    return filtered;
+  }, [filter, filtered, restProjects]);
 
   return (
     <section id="projects" className="section-padding">
@@ -334,7 +374,7 @@ export default function Projects() {
         </AnimateIn>
 
         {/* Filter bar */}
-        <div className="mt-8 flex flex-wrap gap-2">
+        <div className="mt-6 flex flex-wrap gap-2">
           {allCategories.map((cat) => (
             <button
               key={cat}
@@ -348,16 +388,27 @@ export default function Projects() {
           ))}
         </div>
 
-        {/* All projects grid */}
+        {/* Main big projects */}
+        {filter === "All" && (
+          <div className="mt-8 grid lg:grid-cols-2 gap-6">
+            {featuredMainProjects.map((p, i) => (
+              <AnimateIn key={`main-${p.title}`} delay={Math.min(i * 0.05, 0.25)}>
+                <ProjectCard project={p} large />
+              </AnimateIn>
+            ))}
+          </div>
+        )}
+
+        {/* Remaining projects grid */}
         <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {filtered.map((p, i) => (
-            <AnimateIn key={p.title} delay={Math.min(i * 0.03, 0.3)}>
+          {smallProjects.map((p, i) => (
+            <AnimateIn key={`all-${p.title}`} delay={Math.min(i * 0.03, 0.3)}>
               <ProjectCard project={p} />
             </AnimateIn>
           ))}
         </div>
 
-        {filtered.length === 0 && (
+        {smallProjects.length === 0 && (
           <p className="text-center text-muted-foreground mt-12">No projects match this filter.</p>
         )}
       </div>
