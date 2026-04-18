@@ -21,7 +21,7 @@ const projects: Project[] = [
     stack: ["TypeScript", "React", "Node.js", "AI"],
     github: "https://github.com/sudhher1s/PERSONALIZED-PLACEMENT-ASSISTANCE-SYSTEM",
     highlight: true,
-    categories: ["Web", "ML/AI", "Full Stack", "Apps", "Games"],
+    categories: ["Web", "ML/AI", "Full Stack", "Apps", "Games", "Mobile"],
   },
   {
     title: "Qsentix",
@@ -283,7 +283,7 @@ const projects: Project[] = [
     desc: "A personalized to-do list app that helps users organize tasks, set reminders, and stay on top of daily work with a simple productivity-focused interface.",
     stack: ["JavaScript", "HTML/CSS", "Reminders", "Productivity"],
     github: "https://github.com/sudhher1s/TODO-LIST-APP",
-    categories: ["Web", "Apps"],
+    categories: ["Web", "Apps", "Mobile"],
   },
 ];
 
