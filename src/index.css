@@ -19,7 +19,7 @@
     --secondary-foreground: 220 25% 12%;
 
     --muted: 40 15% 94%;
-    --muted-foreground: 220 10% 46%;
+    --muted-foreground: 220 10% 36%;
 
     --accent: 38 85% 55%;
     --accent-foreground: 220 25% 12%;
@@ -49,7 +49,7 @@
     --secondary-foreground: 40 15% 92%;
 
     --muted: 220 15% 16%;
-    --muted-foreground: 220 10% 55%;
+    --muted-foreground: 222 26% 74%;
 
     --accent: 38 80% 52%;
     --accent-foreground: 220 20% 8%;
@@ -98,7 +98,7 @@
   .glass-card {
     @apply bg-card/80 backdrop-blur-sm border border-border rounded-xl;
     box-shadow: var(--card-shadow);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
   }
 
   .glass-card:hover {

@@ -33,10 +33,7 @@ export default function Hero() {
 
           {/* Content */}
           <div className="text-center md:text-left">
-            <AnimateIn delay={0.15}>
-              <p className="text-primary font-medium text-sm tracking-widest uppercase mb-4">Welcome to my portfolio</p>
-            </AnimateIn>
-            <AnimateIn delay={0.25}>
+            <AnimateIn delay={0.2}>
               <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-bold text-foreground mb-4 leading-tight">
                 Sugandham<br />
                 <span className="gradient-text">Sudheer</span>

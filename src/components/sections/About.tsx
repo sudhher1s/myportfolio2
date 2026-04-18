@@ -10,11 +10,14 @@ export default function About() {
         </AnimateIn>
         <AnimateIn delay={0.15}>
           <div className="glass-card p-8 md:p-10 mt-8">
-            <p className="text-foreground leading-relaxed text-lg mb-4">
-              I am a passionate Full Stack Developer with a strong foundation in Computer Science and a keen interest in Artificial Intelligence. My journey in technology is driven by a desire to create innovative solutions that make a difference.
+            <p className="text-foreground/95 leading-relaxed text-lg mb-4">
+              I'm a B.Tech Computer Science student at GMR Institute of Technology with a track record of building 33+ real-world projects across full-stack development, AI/ML, and quantum computing. From winning hackathons to interning at IIT Ropar and HCL Technologies, I don't just learn technology — I ship it.
             </p>
-            <p className="text-muted-foreground leading-relaxed">
-              I'm currently pursuing B.Tech in Computer Science at GMR Institute of Technology and hold a Diploma in Computer Engineering with 95.6%. I'm a hardworking and dedicated individual with strong willingness to learn and apply new ideas effectively.
+            <p className="text-foreground/90 leading-relaxed mb-4">
+              My work spans accident detection systems using YOLO, GenAI-powered medical coding assistants, quantum ML stock predictors, and civic tech platforms for urban issue reporting. I combine technical depth with a problem-first mindset — every project I build solves something real.
+            </p>
+            <p className="text-foreground/90 leading-relaxed">
+              When I'm not coding, I'm competing — I've won 1st prize at Swarnandhra HackSprint, placed top-5 at NSRIT Hackathon, and secured 2nd prize at the GMRIT Gen AI Launch Pad. I scored 100% in SSC and 95.6% in my Diploma, and I'm certified by NPTEL, Coursera, and L&T EduTech.
             </p>
           </div>
         </AnimateIn>

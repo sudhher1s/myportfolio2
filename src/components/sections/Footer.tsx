@@ -1,4 +1,4 @@
-const links = ["About", "Education", "Skills", "Internships", "Projects", "Achievements", "Certifications", "Contact"];
+const links = ["About", "Education", "Skills", "Internships", "Projects", "Recognition", "Certifications", "Contact"];
 
 export default function Footer() {
   const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -19,6 +19,10 @@ export default function Footer() {
         </div>
         <p className="text-xs text-muted-foreground">
           © {new Date().getFullYear()} Sugandham Sudheer. All rights reserved.
+          {" "}
+          <button onClick={() => scrollTo("hero")} className="hover:text-foreground transition-colors">
+            ↑ Back to Top
+          </button>
         </p>
       </div>
     </footer>

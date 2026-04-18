@@ -76,7 +76,7 @@ export default function Contact() {
                     <Mail size={16} className="text-primary" /> sudheersugandham@gmail.com
                   </a>
                   <a href="tel:+918143836577" className="flex items-center gap-3 text-sm text-foreground hover:text-primary transition-colors">
-                    <Phone size={16} className="text-primary" /> +91 8143836577
+                    <Phone size={16} className="text-primary" /> +91 81438 36577
                   </a>
                   <a href="https://www.linkedin.com/in/sugandhamsudheer/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-foreground hover:text-primary transition-colors">
                     <Linkedin size={16} className="text-primary" /> LinkedIn
