@@ -8,6 +8,7 @@ interface Project {
   desc: string;
   stack: string[];
   github?: string;
+  deployed?: string;
   featured?: boolean;
   highlight?: boolean;
   categories: string[];
@@ -20,6 +21,7 @@ const projects: Project[] = [
     desc: "A TypeScript-based placement preparation platform that helps students prepare for job placements with AI-powered resume analysis, mock interviews, aptitude practice, and a career guidance chatbot.",
     stack: ["TypeScript", "React", "Node.js", "AI"],
     github: "https://github.com/sudhher1s/PERSONALIZED-PLACEMENT-ASSISTANCE-SYSTEM",
+    deployed: "https://personalizedplacementasssistancesys.vercel.app/",
     highlight: true,
     categories: ["Web", "ML/AI", "Full Stack", "Apps", "Games", "Mobile"],
   },
@@ -338,6 +340,12 @@ function ProjectCard({ project, large = false }: { project: Project; large?: boo
             <span key={t} className="text-[10px] px-2 py-0.5 rounded bg-secondary text-muted-foreground">{t}</span>
           ))}
         </div>
+        {project.deployed && (
+          <a href={project.deployed} target="_blank" rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-xs text-primary hover:underline font-medium mr-4">
+            <ExternalLink size={13} /> Live Demo
+          </a>
+        )}
         {project.github && (
           <a href={project.github} target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-xs text-primary hover:underline font-medium">
