@@ -24,7 +24,7 @@ const technicalGroups: SkillGroup[] = [
     skills: [
       { name: "HTML5/CSS3", level: 70 }, { name: "JavaScript", level: 60 }, { name: "Flask", level: 65 },
       { name: "Bootstrap", level: 55 }, { name: "PHP", level: 45 }, { name: "Django", level: 40 },
-      { name: "React", level: 40 }, { name: "FastAPI", level: 35 },
+      { name: "React", level: 40 }, { name: "FastAPI", level: 35 }, { name: "Streamlit", level: 55 },
     ],
   },
   {
@@ -83,7 +83,7 @@ const technicalGroups: SkillGroup[] = [
     skills: [
       { name: "Git/GitHub", level: 70 }, { name: "VS Code", level: 70 },
       { name: "Jupyter Notebook", level: 65 }, { name: "PyCharm", level: 60 },
-      { name: "Streamlit", level: 55 }, { name: "XAMPP", level: 50 }, { name: "Antigravity", level: 45 },
+      { name: "XAMPP", level: 50 }, { name: "Antigravity", level: 45 },
     ],
   },
 ];

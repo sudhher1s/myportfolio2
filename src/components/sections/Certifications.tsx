@@ -6,7 +6,7 @@ type RecognitionType = "hackathon" | "academic" | "school";
 const recognitionCards: { title: string; desc: string; type: RecognitionType }[] = [
   { title: "Swarnandhra HackSprint", desc: "1st Prize Winner (2025)", type: "hackathon" },
   { title: "NSRIT Hackathon 2025", desc: "5th Place Winner", type: "hackathon" },
-  { title: "GMRITX NAIT Gen AI Launch Pad", desc: "2nd Prize (2025)", type: "hackathon" },
+  { title: "GMRITX NAIT Gen AI Launch Pad", desc: "2nd Prize (2026)", type: "hackathon" },
   { title: "Aignite 2.0 at AITAM Srikakulam", desc: "Consolation Prize — Hackathon/Innovation Event", type: "hackathon" },
   { title: "HackHub - GMRIT", desc: "Final Round (2025)", type: "hackathon" },
   { title: "Gen AI Hackathon - JNTU VGM", desc: "Final Round", type: "hackathon" },
