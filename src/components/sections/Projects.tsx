@@ -1,5 +1,5 @@
 import AnimateIn from "@/components/AnimateIn";
-import { Github, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { useState, useMemo } from "react";
 
 interface Project {
@@ -346,12 +346,6 @@ function ProjectCard({ project, large = false }: { project: Project; large?: boo
             <ExternalLink size={13} /> Live Demo
           </a>
         )}
-        {project.github && (
-          <a href={project.github} target="_blank" rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs text-primary hover:underline font-medium">
-            <Github size={13} /> View on GitHub <ExternalLink size={10} />
-          </a>
-        )}
       </div>
     </div>
   );
@@ -415,6 +409,10 @@ export default function Projects() {
             </AnimateIn>
           ))}
         </div>
+
+        <p className="mt-8 text-center text-sm text-muted-foreground">
+          If you want to access the source code, just mail or contact me and I’ll share the details.
+        </p>
 
         {smallProjects.length === 0 && (
           <p className="text-center text-muted-foreground mt-12">No projects match this filter.</p>
